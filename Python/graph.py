@@ -15,7 +15,7 @@ vars_data3 = []
 years_data4 = []
 vars_data4 = []
 
-with open('carbon.txt') as csvfile:
+with open('../Data/carbon.txt') as csvfile:
     readfile = csv.reader(csvfile, delimiter=',')
 
     for line in readfile:
@@ -24,7 +24,7 @@ with open('carbon.txt') as csvfile:
         years_data1.append(year)
         vars_data1.append(var)
 
-with open('temperature.txt') as csvfile:
+with open('../Data/temperature.txt') as csvfile:
     readfile = csv.reader(csvfile, delimiter=',')
 
     for line in readfile:
@@ -33,7 +33,7 @@ with open('temperature.txt') as csvfile:
         years_data2.append(year_data2)
         vars_data2.append(var_data2)
 
-with open('arctic.txt') as csvfile:
+with open('../Data/arctic.txt') as csvfile:
     readfile = csv.reader(csvfile, delimiter=',')
 
     for line in readfile:
@@ -42,7 +42,7 @@ with open('arctic.txt') as csvfile:
         years_data3.append(year_data3)
         vars_data3.append(var_data3)
 
-with open('sea.txt') as csvfile:
+with open('../Data/sea.txt') as csvfile:
     readfile = csv.reader(csvfile, delimiter=',')
 
     for line in readfile:
