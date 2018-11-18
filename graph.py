@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 import csv
+import numpy as np
 year_data4_test = 1993
 sumvars = 0
 row_list = []
@@ -14,12 +15,11 @@ vars_data3 = []
 years_data4 = []
 vars_data4 = []
 
-
 with open('carbon.txt') as csvfile:
     readfile = csv.reader(csvfile, delimiter=',')
 
     for line in readfile:
-        year = float(line[0])
+        year = int(line[0])
         var = float(line[1])
         years_data1.append(year)
         vars_data1.append(var)
@@ -61,31 +61,35 @@ with open('sea.txt') as csvfile:
     row_list.append(row+1)
     sumvars_list.append(sumvars)
 
-def cal2senple():
+def cal2semple():
 
-    for i,j in row_list,sumvars_list:
-        print(i,j)
+    for i in range(len(sumvars_list)):
+        num_a = sumvars_list[i]
+        num_b = row_list[i]
+        vars_data4.append((int((num_a/num_b)*100))/100)
     for i in range(1993, 2019):
         years_data4.append(i)
-    print(years_data4)
+    return 1
 
-def demo1():
-    x1 = years_data1
-    y1 = vars_data1
-    x2 = years_data2
-    y2 = vars_data2
-    x3 = years_data3
-    y3 = vars_data3
-    
-    plt.plot(x1 ,y1)
+def graph():
+    fig = plt.figure()
+    fig.add_subplot(221)
+    plt.plot(years_data1, vars_data1)
+    plt.plot([2019, 2020],[420, 430], linestyle="--")
+    plt.title("A")
+    fig.add_subplot(222)
+    plt.plot(years_data2, vars_data2)
+    plt.title("B")
+    fig.add_subplot(223)
+    plt.plot(years_data3, vars_data3)
+    plt.title("C")
+    fig.add_subplot(224)
+    plt.plot(years_data4, vars_data4)
+    plt.title("D")
     plt.show()
-
-
-#demo1()
+    return 1
 
 def main():
-    print(sumvars_list)
-    print(row_list)
-
-
-cal2senple()
+    cal2semple()
+    graph()
+main()
