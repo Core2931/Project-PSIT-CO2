@@ -62,32 +62,37 @@ with open('sea.txt') as csvfile:
     sumvars_list.append(sumvars)
 
 def cal2semple():
-
     for i in range(len(sumvars_list)):
         num_a = sumvars_list[i]
         num_b = row_list[i]
         vars_data4.append((int((num_a/num_b)*100))/100)
     for i in range(1993, 2019):
         years_data4.append(i)
-    return 1
 
 def graph():
     fig = plt.figure()
     fig.add_subplot(221)
     plt.plot(years_data1, vars_data1)
-    plt.plot([2019, 2020],[420, 430], linestyle="--")
-    plt.title("A")
+    #plt.plot([2019, 2020],[420, 430], linestyle="--")
+    #plt.xlabel("YEAR")
+    plt.ylabel("CO2 (parts per million)")
+    plt.title("Carbon")
     fig.add_subplot(222)
     plt.plot(years_data2, vars_data2)
-    plt.title("B")
+    plt.title("Global Temperature")
+    #plt.xlabel("YEAR")
+    plt.ylabel("Temperature Anomaly (C)")
     fig.add_subplot(223)
     plt.plot(years_data3, vars_data3)
-    plt.title("C")
+    plt.title("Arctic Sea Ice")
+    plt.xlabel("YEAR")
+    plt.ylabel("Square KM")
     fig.add_subplot(224)
     plt.plot(years_data4, vars_data4)
-    plt.title("D")
+    plt.title("Sea Level")
+    plt.xlabel("YEAR")
+    plt.ylabel("Sea Height (mm)")
     plt.show()
-    return 1
 
 def main():
     cal2semple()
