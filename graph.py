@@ -2,8 +2,9 @@ import matplotlib.pyplot as plt
 import csv
 year_data4_test = 1993
 sumvars = 0
+row_list = []
 sumvars_list = []
-num = 0
+row = 0
 years_data1 = []
 vars_data1 = []
 years_data2 = []
@@ -49,27 +50,42 @@ with open('sea.txt') as csvfile:
         var_data4 = float(line[1])
         if year_data4 == year_data4_test:
             sumvars += var_data4
+            row += 1
         else:
-            print(sumvars)
+            row_list.append(row+1)
+            row = 0
+            sumvars_list.append(sumvars)
             sumvars = 0
             sumvars += var_data4
             year_data4_test = year_data4
-            num += 1
-    print(sumvars)
-        # years_data4.append(year_data4)
-        # vars_data4.append(var_data4)
+    row_list.append(row+1)
+    sumvars_list.append(sumvars)
+
+def cal2senple():
+
+    for i,j in row_list,sumvars_list:
+        print(i,j)
+    for i in range(1993, 2019):
+        years_data4.append(i)
+    print(years_data4)
 
 def demo1():
-    x = years_data4
-    y = vars_data4
-    plt.plot(x ,y)
+    x1 = years_data1
+    y1 = vars_data1
+    x2 = years_data2
+    y2 = vars_data2
+    x3 = years_data3
+    y3 = vars_data3
+    
+    plt.plot(x1 ,y1)
     plt.show()
 
 
 #demo1()
 
 def main():
-    print(num)
-    # print(sumvars_list)
+    print(sumvars_list)
+    print(row_list)
 
-main()
+
+cal2senple()
