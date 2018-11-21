@@ -19,10 +19,10 @@ with open('../Data/carbon.txt') as csvfile:
     readfile = csv.reader(csvfile, delimiter=',')
 
     for line in readfile:
-        year = int(line[0])
-        var = float(line[1])
-        years_data1.append(year)
-        vars_data1.append(var)
+        year_data1 = int(line[0])
+        var_data1 = float(line[1])
+        years_data1.append(year_data1)
+        vars_data1.append(var_data1)
 
 with open('../Data/temperature.txt') as csvfile:
     readfile = csv.reader(csvfile, delimiter=',')
