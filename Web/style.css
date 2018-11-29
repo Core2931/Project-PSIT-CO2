@@ -1,8 +1,11 @@
 
-.back{
+body {
 	text-align: center;
 	margin: 0 auto;
-	background-color: black;
+	background-image: url(https://github.com/Core2931/Project-PSIT-CO2/blob/Mark/Web/banner.jpg?raw=true);
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+	background-attachment : fixed
 }
 
 .box {
@@ -28,10 +31,20 @@
 	font-size: 30px;
 }
 .bar1{
-	margin: 50px 375px;
+	margin: 15px 390px;
 	font-size: 30px;
-	border: 4px solid;
-	padding: 30px;
+	border: 2px solid;
+	padding: 20px;
 	background-color: #0066CC;
 	border-color: white;
+	border-left-width: 18px ;
+	border-right-width: 18px ;
+
+}
+.graph1{
+	background-attachment : fixed
+	background-repeat: no-repeat;
+	font-size: 20px;
+	color: red;
+	
 }
